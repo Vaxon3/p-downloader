@@ -1,0 +1,79 @@
+{
+  "websites": {
+    "xvideos": {
+      "base_url": "https://www.xvideos.com",
+      "supports_versions": false,
+      "supports_seasons": false,
+      "natural_format": "mp4",
+      "search_url_template": "https://www.xvideos.com/?k={query}",
+      "search_url_pagination_template": "https://www.xvideos.com/?k={query}&p={page}",
+      "search_results_selector": "div.mozaique div.thumb-block",
+      "result_title_selector": "p.title a",
+      "result_link_selector": "p.title a",
+      "result_image_selector": "div.thumb img",
+      "result_year_selector": "span.duration",
+      "video_file_selector": [
+        { "tag": "video", "attribute": "src" },
+        { "tag": "source", "attribute": "src" }
+      ]
+    },
+    "erome": {
+      "base_url": "https://www.erome.com",
+      "supports_versions": false,
+      "supports_seasons": false,
+      "natural_format": "mp4",
+      "search_url_template": "https://www.erome.com/search?q={query}",
+      "search_url_pagination_template": "https://www.erome.com/search?q={query}&page={page}",
+      "search_results_selector": "div#albums div.album",
+      "result_title_selector": "a.album-title",
+      "result_link_selector": "a.album-link",
+      "result_image_selector": "img.album-thumbnail",
+      "episode_list_container": "div#page",
+      "episode_item_selector": "div.video, div.img",
+      "video_file_selector": [
+        { "tag": "video", "attribute": "src" },
+        { "tag": "source", "attribute": "src" },
+        { "tag": "img", "attribute": "src" },
+        { "tag": "img", "attribute": "data-src" }
+      ]
+    },
+    "spankbang": {
+      "base_url": "https://spankbang.com",
+      "supports_versions": false,
+      "supports_seasons": false,
+      "natural_format": "mp4",
+      "search_url_template": "https://spankbang.com/s/{query}/",
+      "search_url_pagination_template": "https://spankbang.com/s/{query}/{page}/",
+      "search_results_selector": "div[data-testid='video-item']",
+      "result_title_selector": "a[title]",
+      "result_link_selector": "a[title]",
+      "result_image_selector": "img",
+      "video_file_selector": [
+        { "tag": "video", "attribute": "src" },
+        { "tag": "source", "attribute": "src" }
+      ]
+    },
+    "coomer": {
+      "base_url": "https://coomer.st",
+      "supports_versions": false,
+      "supports_seasons": false,
+      "natural_format": "mp4",
+      "search_url_template": "https://coomer.st/artists?q={query}",
+      "search_url_pagination_template": "https://coomer.st/artists?q={query}&o={offset}",
+      "search_results_selector": "div.card-list__items > a",
+      "result_title_selector": "div.user-card__name",
+      "result_link_selector": "a.user-card",
+      "result_image_selector": "img.fancy-image__image",
+      "episode_list_container": "div.card-list__items",
+      "episode_item_selector": "article.post-card",
+      "episode_title_selector": "header.post-card__header",
+      "episode_link_selector": "a.fancy-link",
+      "video_file_selector": [
+        { "tag": "a", "attribute": "href", "class": "fileThumb" },
+        { "tag": "a", "attribute": "href", "class": "post__attachment-link" },
+        { "tag": "video", "attribute": "src" },
+        { "tag": "source", "attribute": "src" }
+      ]
+    }
+  }
+}

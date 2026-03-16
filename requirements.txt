@@ -1,0 +1,8 @@
+requests
+beautifulsoup4
+undetected-chromedriver
+yt-dlp
+curl_cffi
+setuptools
+webdriver-manager
+Pillow

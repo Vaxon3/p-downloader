@@ -1,0 +1,41 @@
+name: Build Android APK
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Get Buildozer Version
+        run: |
+          pip install buildozer
+          buildozer --version
+
+      - name: Build with Buildozer
+        uses: ArtemSerebrennikov/buildozer-action@v1
+        with:
+          buildozer_version: stable
+          python_version: 3.11
+          # Pass the buildozer.spec from the repo
+          command: android debug
+          repository_root: .
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdownloader-apk
+          path: bin/*.apk
