@@ -26,11 +26,10 @@ jobs:
           buildozer --version
 
       - name: Build with Buildozer
-        uses: ArtemSerebrennikov/buildozer-action@v1
+        uses: kivy/buildozer-action@v1
         with:
           buildozer_version: stable
           python_version: 3.11
-          # Pass the buildozer.spec from the repo
           command: android debug
           repository_root: .
 
