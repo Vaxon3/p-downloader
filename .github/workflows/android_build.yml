@@ -18,7 +18,7 @@ jobs:
           docker run \
             --volume "$(pwd):/home/user/app" \
             --workdir "/home/user/app" \
-            ghcr.io/artemsbulgakov/buildozer-action:stable \
+            kivy/buildozer:stable \
             bash -c "buildozer android debug"
 
       - name: Upload APK
