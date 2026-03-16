@@ -13,17 +13,13 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # We use a known working pattern: 
-      # The 'ArtemSBulgakov/buildozer-action' is good, but we must let it 
-      # handle permissions itself without injecting a USER env that confuses it.
-      - name: Build with Buildozer
-        uses: ArtemSBulgakov/buildozer-action@v1
-        with:
-          buildozer_version: stable
-          command: android debug
-          repository_root: .
-        env:
-          USER: $(id -un) # Use the current user of the runner
+      - name: Run Buildozer in Docker Container
+        run: |
+          docker run \
+            --volume "$(pwd):/home/user/app" \
+            --workdir "/home/user/app" \
+            ghcr.io/artemsbulgakov/buildozer-action:stable \
+            bash -c "buildozer android debug"
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
