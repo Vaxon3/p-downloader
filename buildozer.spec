@@ -6,7 +6,7 @@ source.dir = .
 source.include_exts = py,png,jpg,kv,json
 source.include_patterns = assets/*,config.json
 version = 1.0.0
-requirements = python3, kivy, curl_cffi, beautifulsoup4, yt-dlp, requests, certifi, chardet, idna, urllib3, pillow
+requirements = python3, kivy, beautifulsoup4, yt-dlp, requests, certifi, chardet, idna, urllib3, pillow
 
 # Android specific
 android.permissions = INTERNET, WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE
