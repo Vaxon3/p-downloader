@@ -10,6 +10,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-22.04
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - name: Checkout Code
@@ -20,16 +22,10 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Get Buildozer Version
-        run: |
-          pip install buildozer
-          buildozer --version
-
       - name: Build with Buildozer
         uses: ArtemSBulgakov/buildozer-action@v1
         with:
           buildozer_version: stable
-          python_version: 3.11
           command: android debug
           repository_root: .
 
